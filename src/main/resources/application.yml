@@ -1,0 +1,40 @@
+#Aplication-properties
+server:
+  port: 5800
+  error:
+    include-message: always
+    include-stacktrace: never
+#DB Configuration
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5100/customer
+    username: <username-postgres-kamu>
+    password: <password-postgres-kamu-juga>
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    properties:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+    naming-strategy: org.hibernate.cfg.ImproveNamingStrategy
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: <email-kamu>
+    password: <password-email-kamu>
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+          ssl:
+            enable: false
+    protocol: smtp
+#Security Configuration
+security:
+  jwt:
+    token:
+      secret-key: secret-key
+
